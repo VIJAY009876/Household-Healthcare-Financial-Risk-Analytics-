@@ -7,7 +7,7 @@ state_Manipur,0.02507201
 Charity,0.024576776
 state_Arunachal Pradesh,0.021775171
 CANCERS,0.020638779
-HH_size_≤4 members,0.020337783
+HH_size_≤4 members,0.020337785
 GENITO,0.019268196
 state_Bihar,0.018979276
 INFECTION,0.018433213
@@ -20,25 +20,25 @@ KIDNEY_FAILURE,0.016293723
 MUSCULO,0.015230141
 BLOOD_DISEASES,0.014989066
 CARDIO_VASCULAR,0.01495989
-PSYCHIATRIC,0.014553048
+PSYCHIATRIC,0.014553049
 SKIN,0.0145182
 state_Karnataka,0.01429223
 state_Uttar Pradesh,0.014248746
 ENDOCRINE,0.014232693
 RESPIRATORY,0.014087731
-economic_quintile_2nd Quintile,0.013747123
+economic_quintile_2nd Quintile,0.013747122
 SYMPTOM_UNKNOWN,0.012941795
 state_Maharashtra,0.012902351
 state_Jharkhand,0.012737786
-state_Nagaland,0.012008562
+state_Nagaland,0.012008561
 Govt,0.0119122
 OBSTETRIC,0.011887095
 social_group_ST,0.011821308
-state_Rajasthan,0.011437321
+state_Rajasthan,0.011437322
 state_Tamil Nadu,0.011163675
-EAR,0.011027036
+EAR,0.011027034
 state_Himachal Pradesh,0.010210094
-state_Haryana,0.010052326
+state_Haryana,0.010052324
 Religion_Islam,0.009480505
 Mejor_source_of_income_Other,0.009467683
 state_Odisha,0.00945643
@@ -52,12 +52,12 @@ state_Jammu & Kashmir,0.008814476
 Mejor_source_of_income_Regular Wage,0.008722849
 state_Uttarakhand,0.008629019
 state_Andhra Pradesh,0.008614276
-state_Madhya Pradesh,0.00856077
+state_Madhya Pradesh,0.008560769
 state_Punjab,0.008519024
 state_Chhattisgarh,0.008322908
 social_group_nan,0.0083222985
-female_ratio,0.008212038
-social_group_SC,0.007960822
+female_ratio,0.008212039
+social_group_SC,0.0079608215
 state_Tripura,0.007936841
 max_education,0.007871451
 state_Sikkim,0.007858056
@@ -67,11 +67,11 @@ sector_Urban,0.0072258324
 insurance_cover_1,0.007217718
 state_Telangana,0.00631013
 NO_SYMPTOM_INFO,0.006173339
-state_Meghalaya,0.0053978735
+state_Meghalaya,0.005397873
 state_Mizoram,0.0053694267
 state_Puducherry,0.004162023
-state_Goa,0.0036746636
-state_Lakshadweep,0.0035930723
+state_Goa,0.003674663
+state_Lakshadweep,0.003593072
 state_Daman & Diu,0.0028685338
 Gender_Transgender,0.0
 state_Delhi,0.0

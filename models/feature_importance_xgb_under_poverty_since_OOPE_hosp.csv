@@ -14,13 +14,13 @@ MUSCULO,0.016956283
 PSYCHIATRIC,0.015719973
 economic_quintile_2nd Quintile,0.014489483
 state_Gujarat,0.014419874
-state_Tamil Nadu,0.013542883
+state_Tamil Nadu,0.013542885
 SYMPTOM_UNKNOWN,0.013538223
 state_Haryana,0.012373572
 OBSTETRIC,0.011860919
 state_Rajasthan,0.0114217205
 CHILDBIRTH,0.011160557
-state_Arunachal Pradesh,0.010935835
+state_Arunachal Pradesh,0.0109358365
 EYE,0.010650849
 state_Assam,0.009893971
 state_Manipur,0.009404714
@@ -31,7 +31,7 @@ state_Mizoram,0.0074867625
 state_West Bengal,0.0071878545
 state_Sikkim,0.007148953
 state_Jharkhand,0.0071316315
-state_Chhattisgarh,0.0068899887
+state_Chhattisgarh,0.006889988
 Govt,0.0066645164
 state_Odisha,0.006634031
 state_Bihar,0.0065065203
@@ -43,11 +43,11 @@ RESPIRATORY,0.005591949
 state_Kerala,0.005501761
 state_Uttarakhand,0.0055000884
 state_Delhi,0.005335118
-female_ratio,0.0053155134
+female_ratio,0.005315514
 sector_Urban,0.0053124875
 state_Tripura,0.0051349574
-state_Nagaland,0.0051084636
-state_Andhra Pradesh,0.0050449935
+state_Nagaland,0.005108463
+state_Andhra Pradesh,0.005044994
 state_Madhya Pradesh,0.0050170664
 NO_SYMPTOM_INFO,0.0049669277
 Mejor_source_of_income_Regular Wage,0.0049360516
@@ -60,12 +60,12 @@ social_group_SC,0.0045843828
 Gender_Male,0.0045357253
 Mejor_source_of_income_Other,0.004443963
 BLOOD_DISEASES,0.004427476
-state_Himachal Pradesh,0.0043699057
+state_Himachal Pradesh,0.004369906
 max_education,0.004351692
 state_Karnataka,0.0042650015
 Mejor_source_of_income_Self-employed,0.0042483676
 social_group_nan,0.00422674
-state_Jammu & Kashmir,0.003965308
+state_Jammu & Kashmir,0.0039653075
 Religion_Islam,0.0039522233
 state_Telangana,0.003924987
 state_Lakshadweep,0.0037631118
@@ -75,7 +75,7 @@ state_Chandigarh,0.0029533638
 state_Meghalaya,0.002683293
 state_Puducherry,0.0026104737
 state_Goa,0.0025378943
-EAR,0.0024011238
-state_Ladakh,0.0021563105
+EAR,0.0024011242
+state_Ladakh,0.0021563102
 Gender_Transgender,0.0
 state_Unknown,0.0

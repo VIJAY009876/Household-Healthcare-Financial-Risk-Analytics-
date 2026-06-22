@@ -25,7 +25,7 @@ economic_quintile_3rd Quintile,0.011731232
 economic_quintile_2nd Quintile,0.011158648
 state_Uttar Pradesh,0.010253181
 SYMPTOM_UNKNOWN,0.010153444
-state_Arunachal Pradesh,0.009365566
+state_Arunachal Pradesh,0.009365567
 state_Sikkim,0.008721841
 state_Delhi,0.008520759
 state_Assam,0.0080397595
@@ -50,7 +50,7 @@ state_Odisha,0.0045942776
 state_Andhra Pradesh,0.004261163
 state_Jharkhand,0.0042066826
 Religion_Other,0.004044527
-ENDOCRINE,0.0040265447
+ENDOCRINE,0.0040265443
 state_Jammu & Kashmir,0.0039906446
 social_group_ST,0.0039522033
 HH_education_Graduation & above,0.003924003
