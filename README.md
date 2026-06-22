@@ -211,7 +211,7 @@ Models the logarithm of Out-of-Pocket Expenditure (OOPE) conditional on positive
 
 ---
 
-## Author
+##  project By 
 
 **Vijay B**  
 M.Sc. Mathematics and Statistics  
