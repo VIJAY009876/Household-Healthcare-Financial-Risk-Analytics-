@@ -18,6 +18,16 @@ from label_maps import NSS_STATE_MAP, DISEASE_COLS, HOSPITAL_TYPE_COLS
 st.set_page_config(page_title="Prediction | NSSO", layout="wide")
 st.title("🤖 ML Prediction — Household Risk Assessment")
 
+st.warning(
+    """
+    ⚠️ Disclaimer
+    The results provided by this dashboard are based on statistical and machine learning models developed using data from the NSSO 80th Round Health Consumption Expenditure Survey (2023–24).
+    These predictions should be considered indicative estimates only and are intended to support understanding and decision-making.
+    Since healthcare costs, policies, and economic conditions may change over time, actual outcomes may differ.
+    Please use these results as a reference or suggestion rather than a guaranteed prediction.
+    """
+)
+
 st.markdown("""
 Enter household characteristics to predict the probability of:
 - **CHE** — Catastrophic Health Expenditure
