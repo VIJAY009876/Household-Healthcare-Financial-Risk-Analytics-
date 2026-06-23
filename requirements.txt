@@ -8,3 +8,4 @@ seaborn==0.13.2          # Statistical visualization
 plotly==6.8.0            # Interactive plots
 statsmodels==0.14.6      # Statistical models
 python-dotenv==1.1.0     # Environment variables
+xgboost==1.7.6           # Extreme Gradient Boosting
