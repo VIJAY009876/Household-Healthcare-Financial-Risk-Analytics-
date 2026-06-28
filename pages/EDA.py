@@ -176,7 +176,7 @@ with tab2:
 with tab3:
     st.subheader("State-wise Weighted Analysis")
 
-    metric = st.selectbox("Metric", ["OOPE", "CHE", "distress", "under_poverty_since_OOPE"])
+    metric = st.selectbox("Metric", ["CHE", "distress", "under_poverty_since_OOPE"])
 
     def state_weighted(df, col):
         return df.groupby("state_name").apply(
