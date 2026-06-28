@@ -162,6 +162,11 @@ with tab2:
         wm.columns = ["quintile", "weighted_oope"]
         wm["quintile"] = wm["quintile"].map(q_map)
         sns.barplot(data=wm, x="quintile", y="weighted_oope", ax=ax, color=color)
+        for bar in ax.patches:
+            ax.annotate(f"{bar.get_height():.1f}%",
+                        (bar.get_x() + bar.get_width()/2, bar.get_height()),
+                        ha="center", va="bottom", fontsize=8)
+        
         ax.set_title(title)
         ax.set_ylabel("Weighted Mean OOPE (Rs.)")
         ax.set_xlabel("Economic Quintile")
@@ -206,7 +211,11 @@ with tab3:
 with tab4:
     st.subheader("Distress Financing by Hospital Type")
 
-    outcome = st.selectbox("Outcome", ["distress", "CHE", "under_poverty_since_OOPE"], key="ht_out")
+    outcome = st.selectbox(
+        "Outcome",
+        ["distress", "CHE", "under_poverty_since_OOPE"],
+        key="ht_out"
+    )
 
     def hosp_type_analysis(df, col):
         result = {}
@@ -214,25 +223,61 @@ with tab4:
             if ht in df.columns:
                 sub = df[df[ht] == 1]
                 if len(sub) > 0:
-                    result[ht] = (sub[col] * sub["mult1"]).sum() / sub["mult1"].sum() * 100
+                    result[ht] = (
+                        (sub[col] * sub["mult1"]).sum()
+                        / sub["mult1"].sum()
+                    ) * 100
                 else:
                     result[ht] = 0.0
         return pd.Series(result)
 
-    r_h  = hosp_type_analysis(h,  outcome)
+    r_h = hosp_type_analysis(h, outcome)
     r_nh = hosp_type_analysis(nh, outcome)
 
     fig5, (ax1, ax2) = plt.subplots(1, 2, figsize=(10, 4))
-    r_h.plot(kind="bar",  ax=ax1, color=["#2e7d32", "#f57c00", "#c62828"], rot=0)
-    r_nh.plot(kind="bar", ax=ax2, color=["#2e7d32", "#f57c00", "#c62828"], rot=0)
-    ax1.set_title(f"Hospitalization — {outcome} % by Hospital Type")
-    ax2.set_title(f"Non-Hospitalization — {outcome} % by Hospital Type")
-    ax1.set_ylabel("Weighted %")
-    ax2.set_ylabel("Weighted %")
+
+    # Hospitalization
+    r_h.plot(
+        kind="bar",
+        ax=ax1,
+        color=["#2e7d32", "#f57c00", "#c62828"],
+        rot=0
+    )
+
+    # Non-Hospitalization
+    r_nh.plot(
+        kind="bar",
+        ax=ax2,
+        color=["#2e7d32", "#f57c00", "#c62828"],
+        rot=0
+    )
+
+    # Add labels on bars
+    for ax in [ax1, ax2]:
+        for container in ax.containers:
+            ax.bar_label(
+                container,
+                fmt="%.2f%%",
+                padding=3,
+                fontsize=9,
+                fontweight="bold"
+            )
+
+        # Add some space above the highest bar
+        ax.set_ylim(0, ax.get_ylim()[1] * 1.15)
+
+    ax1.set_title(f"Hospitalization — {outcome.replace('_', ' ').title()} (%)")
+    ax2.set_title(f"Non-Hospitalization — {outcome.replace('_', ' ').title()} (%)")
+
+    ax1.set_ylabel("Weighted Percentage")
+    ax2.set_ylabel("Weighted Percentage")
+
+    ax1.grid(axis="y", linestyle="--", alpha=0.4)
+    ax2.grid(axis="y", linestyle="--", alpha=0.4)
+
     plt.tight_layout()
     st.pyplot(fig5)
     plt.close()
-
 # ─────────────────────────────────────────────────────────────────
 # TAB 5: Disease
 # ─────────────────────────────────────────────────────────────────
@@ -240,7 +285,9 @@ with tab5:
     st.subheader("Outcome by Disease Category")
 
     disease_outcome = st.selectbox(
-        "Outcome", ["CHE", "distress", "under_poverty_since_OOPE"], key="dis_out"
+        "Outcome",
+        ["CHE", "distress", "under_poverty_since_OOPE"],
+        key="dis_out"
     )
 
     def disease_analysis(df, col):
@@ -249,19 +296,62 @@ with tab5:
             if d in df.columns:
                 sub = df[df[d] == 1]
                 if len(sub) > 0:
-                    res[d] = (sub[col] * sub["mult1"]).sum() / sub["mult1"].sum() * 100
+                    res[d] = (
+                        (sub[col] * sub["mult1"]).sum()
+                        / sub["mult1"].sum()
+                    ) * 100
         return pd.Series(res).sort_values()
 
-    dh  = disease_analysis(h,  disease_outcome)
+    dh = disease_analysis(h, disease_outcome)
     dnh = disease_analysis(nh, disease_outcome)
 
     fig6, (ax1, ax2) = plt.subplots(1, 2, figsize=(14, 7))
-    dh.plot(kind="barh",  ax=ax1, color="#1a7abf")
-    dnh.plot(kind="barh", ax=ax2, color="#e05c2a")
-    ax1.set_title(f"Hospitalization — {disease_outcome} % by Disease")
-    ax2.set_title(f"Non-Hospitalization — {disease_outcome} % by Disease")
-    ax1.set_xlabel("Weighted %")
-    ax2.set_xlabel("Weighted %")
+
+    # Hospitalization
+    bars1 = ax1.barh(
+        dh.index,
+        dh.values,
+        color="#1a7abf",
+        alpha=0.85
+    )
+
+    # Non-Hospitalization
+    bars2 = ax2.barh(
+        dnh.index,
+        dnh.values,
+        color="#e05c2a",
+        alpha=0.85
+    )
+
+    # Add value labels
+    for ax, bars, data in zip(
+        [ax1, ax2],
+        [bars1, bars2],
+        [dh, dnh]
+    ):
+        ax.bar_label(
+            bars,
+            fmt="%.2f%%",
+            padding=3,
+            fontsize=8,
+            fontweight="bold"
+        )
+
+        # Leave room for labels
+        ax.set_xlim(0, data.max() * 1.15)
+
+        ax.grid(axis="x", linestyle="--", alpha=0.4)
+
+    ax1.set_title(
+        f"Hospitalization — {disease_outcome.replace('_', ' ').title()} (%) by Disease"
+    )
+    ax2.set_title(
+        f"Non-Hospitalization — {disease_outcome.replace('_', ' ').title()} (%) by Disease"
+    )
+
+    ax1.set_xlabel("Weighted Percentage")
+    ax2.set_xlabel("Weighted Percentage")
+
     plt.tight_layout()
     st.pyplot(fig6)
     plt.close()
