@@ -192,7 +192,7 @@ with tab3:
         ["Hospitalization", "Non-Hospitalization"],
         ["#1a7abf", "#e05c2a"]
     ):
-        ax.barh(df["state_name"], df["value"], color=color, alpha=0.85)
+        bars = ax.barh(df["state_name"], df["value"], color=color, alpha=0.85)
         ax.bar_label(bars, fmt="%.2f", padding=3, fontsize=9)
         ax.set_title(f"{title} — {metric}")
         ax.set_xlabel(metric)
