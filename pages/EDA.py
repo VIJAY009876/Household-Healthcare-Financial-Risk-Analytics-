@@ -79,10 +79,10 @@ with tab1:
     st.subheader("Demographic Distribution")
 
     col_map = {
-        "Gender":           {1: "Male", 2: "Female", 3: "Transgender"},
+        # "Gender":           {1: "Male", 2: "Female", 3: "Transgender"},
         "social_group":     {1: "ST", 2: "SC", 3: "OBC", 4: "General"},
         "religion":         {1: "Hindu", 2: "Islam", 3: "Christian", 4: "Sikh", 5: "Other"},
-        "economic_quintile":{1: "Q1", 2: "Q2", 3: "Q3", 4: "Q4", 5: "Q5"},
+        "economic_quintile":{1: "Q1:9000", 2: "Q2:12500", 3: "Q3:16500", 4: "Q4:22000", 5: "Q5:above"},
     }
 
     chosen = st.selectbox("Select variable", list(col_map.keys()))
@@ -110,17 +110,17 @@ with tab1:
     st.pyplot(fig)
     plt.close()
 
-    # Age distribution
-    st.subheader("Age Distribution (vs CHE cases)")
-    fig2, (ax1, ax2) = plt.subplots(1, 2, figsize=(12, 4))
-    for ax, df, title in zip([ax1, ax2], [h, nh], ["Hospitalization", "Non-Hospitalization"]):
-        sns.histplot(df["Age"], kde=True, bins=50, color="#aac8e8", ax=ax, label="All")
-        sns.histplot(df[df["CHE"] == 1]["Age"], kde=True, bins=50, color="#e05c2a", ax=ax, label="CHE=1")
-        ax.set_title(title)
-        ax.legend()
-    plt.tight_layout()
-    st.pyplot(fig2)
-    plt.close()
+    # # Age distribution
+    # st.subheader("Age Distribution (vs CHE cases)")
+    # fig2, (ax1, ax2) = plt.subplots(1, 2, figsize=(12, 4))
+    # for ax, df, title in zip([ax1, ax2], [h, nh], ["Hospitalization", "Non-Hospitalization"]):
+    #     sns.histplot(df["Age"], kde=True, bins=50, color="#aac8e8", ax=ax, label="All")
+    #     sns.histplot(df[df["CHE"] == 1]["Age"], kde=True, bins=50, color="#e05c2a", ax=ax, label="CHE=1")
+    #     ax.set_title(title)
+    #     ax.legend()
+    # plt.tight_layout()
+    # st.pyplot(fig2)
+    # plt.close()
 
 # ─────────────────────────────────────────────────────────────────
 # TAB 2: OOPE Distribution
@@ -148,7 +148,7 @@ with tab2:
 
     # OOPE by income quintile
     st.subheader("Weighted Mean OOPE by Economic Quintile")
-    q_map = {1: "Q1 (Poorest)", 2: "Q2", 3: "Q3", 4: "Q4", 5: "Q5 (Richest)"}
+    q_map = {1: "Q1 :9000", 2: "Q2:12500", 3: "Q3:16500", 4: "Q4:22000", 5: "Q5:above"}
 
     fig3, (ax1, ax2) = plt.subplots(1, 2, figsize=(12, 4))
     for ax, df, title, color in zip(
