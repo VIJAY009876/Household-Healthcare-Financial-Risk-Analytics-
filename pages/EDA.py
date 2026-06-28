@@ -163,7 +163,7 @@ with tab2:
         wm["quintile"] = wm["quintile"].map(q_map)
         sns.barplot(data=wm, x="quintile", y="weighted_oope", ax=ax, color=color)
         for bar in ax.patches:
-            ax.annotate(f"{bar.get_height():.1f}%",
+            ax.annotate(f"{bar.get_height():.1f}",
                         (bar.get_x() + bar.get_width()/2, bar.get_height()),
                         ha="center", va="bottom", fontsize=8)
         
@@ -213,7 +213,7 @@ with tab4:
 
     outcome = st.selectbox(
         "Outcome",
-        ["distress", "CHE", "under_poverty_since_OOPE"],
+        [ "CHE", "under_poverty_since_OOPE"],
         key="ht_out"
     )
 
