@@ -21,7 +21,7 @@ st.title("🤖 ML Prediction — Household Risk Assessment")
 st.warning(
     """
     ⚠️ Disclaimer
-    The results provided by this dashboard are based on statistical and machine learning models developed using data from the NSSO 80th Round Health Consumption Expenditure Survey (2023–24).
+    The results provided by this dashboard are based on statistical and machine learning models developed using data from the NSSO 80th Round Health Consumption Expenditure Survey (2025).
     These predictions should be considered indicative estimates only and are intended to support understanding and decision-making.
     Since healthcare costs, policies, and economic conditions may change over time, actual outcomes may differ.
     Please use these results as a reference or suggestion rather than a guaranteed prediction.
