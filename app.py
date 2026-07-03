@@ -8,7 +8,7 @@ import streamlit as st
 
 # ── MUST be first Streamlit command ────────────────────────────────
 st.set_page_config(
-    page_title="Analysis and Prediction of Medical Expenditure and Its Effects on Indian households",
+    page_title="Statistical Analysis of Rising Healthcare Expenditure and Financial Risk among Indian Households",
     page_icon="🏥",
     layout="wide",
     initial_sidebar_state="expanded"
